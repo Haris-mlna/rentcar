@@ -1,0 +1,13 @@
+<!-- The form container that opens and closes -->
+<div class="form-container" *ngIf="isFormOpen" (click)="closeForm()">
+  <form action="" method="POST" (click)="onFormClick($event)">
+    <h1>LOGIN</h1>
+    <label for="login-username">Username</label>
+    <input class="login-username" type="text" name="login-username" id="login-username" [(ngModel)]="username">
+    <label for="login-password">Password</label>
+    <input class="login-password" type="password" name="login-password" id="login-password" [(ngModel)]="password">
+    <input class="submit" type="submit" value="LOGIN" (click)="loginSubmit($event)">
+    <p>or</p>
+    <a href="/register">register</a>
+  </form>
+</div>

@@ -1,0 +1,22 @@
+<nav>
+  <div class="lt">
+    <ul *ngIf="!isMobileScreen" class="linkContainer">
+      <li class="link-main"><a href="/list-car">List Car</a></li>
+      <li class="link-main"><a href="">RENT</a></li>
+    </ul>
+  </div>
+  <div class="md">
+    <div class="logo">LOGO</div>
+  </div>
+  <div class="rt" *ngIf="!isMobileScreen">
+    <!-- Toggle the form container -->
+    <button (click)="openForm()">LOGIN</button>
+  </div>
+
+  <!-- MOBILE ONLY -->
+  <div class="mobile-menu" *ngIf="isMobileScreen">MENU</div>
+</nav>
+
+<!-- DESKTOP ONLY -->
+<!-- The form container -->
+<app-form-login [isFormOpen]="isFormOpen" (closeFormEvent)="closeForm()"></app-form-login>
